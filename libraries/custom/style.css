@@ -1,0 +1,53 @@
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.nav-item {
+  font-weight: 700;
+  font-family: sans-serif;
+}
+
+.nav-link a:hover {
+  background-color: yellow;
+  border-radius: 10px;
+  /* display: inline-block;
+    border-top: 6px solid yellow;
+    height: 51px;
+    line-height: 51px;
+    position: relative;
+    top: -15px; */
+}
+.text-bold {
+  font-size: xx-large;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.padd-left {
+  padding-left: 7.5rem !important;
+}
+.login-form {
+  /* background-image: url('images\pexels-photo-13.jpeg'); */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+#studentsForm{
+  display: none;
+}
+#mentorsForm {
+  display: none;
+}
+#companiesForm {
+  display: none;
+}
+
+
+/* Form control */
+
+/* Form control end */
+
+/* FOOTER */
+
+/* FOOTER */
