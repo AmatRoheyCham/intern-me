@@ -2,6 +2,73 @@
 
  <!-- MAIN section Begins -->
 
+    <!-- Dashboard Stuffs -->
+ <div class="container pt-4">
+ <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>10</h3>
+
+                <p>Recent Posts</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-bag"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>53</h3>
+
+                <p>Total Likes</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>44</h3>
+
+                <p>Total Ratings</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-person-add"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>4</h3>
+
+                <p>Requests</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-pie-graph"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+ </div>
+
+ <!-- Dashboard Stuffs Ends -->
 
     <div class="container">
     <h3 class="text-center pt-3">Recent Posts</h3>
@@ -57,14 +124,7 @@
     </div>
 
 
-    <!-- DELETE THIS LATER -->
-    <div class="container text-center">
-                  <p>Click on links below to view student, company or mentors specific page, this will be removed later and accessed through authentication</p>
-                  <a class="nav-item btn btn-warning nav-link active mr-2 " href="../students/home.php">students homepage</a>
-                  <a class="nav-item btn btn-warning nav-link active mr-2 " href="../companies/companies.php">companies homepahe</a>
-                  <a class="nav-item btn btn-warning nav-link active mr-2 " href="mentors.php">mentors homepage</a>
-    </div>
-    <!-- END DELETE -->
+  
 
  <footer class="footer card text-center">
  <strong>Copyright © 2021 <a href=""> Intern~Me</a>.</strong> All rights

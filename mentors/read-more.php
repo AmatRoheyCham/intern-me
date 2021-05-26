@@ -2,15 +2,8 @@
 
 <div class="container pt-3">
 <div class="col-md-9 text-center">
-          <div class="card card-primary card-outline">
-            <div class="card-header">
-              <h3 class="card-title">Read Mail</h3>
-
-              <div class="card-tools">
-                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Previous"><i class="fas fa-chevron-left"></i></a>
-                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Next"><i class="fas fa-chevron-right"></i></a>
-              </div>
-            </div>
+          <div class="card shadow card-primary card-outline">
+          
             <!-- /.card-header -->
             <div class="card-body p-0">
               <div class="mailbox-read-info">
@@ -44,17 +37,18 @@
                   slow-carb. Odd Future photo booth pork belly, you probably haven't heard of them actually tofu ennui
                   keffiyeh lo-fi Truffaut health goth. Narwhal sustainable retro disrupt.</p>
 
-                <p>Skateboard artisan letterpress before they sold out High Life messenger bag. Bitters chambray
-                  leggings listicle, drinking vinegar chillwave synth. Fanny pack hoodie American Apparel twee. American
-                  Apparel PBR listicle, salvia aesthetic occupy sustainable Neutra kogi. Organic synth Tumblr viral
-                  plaid, shabby chic single-origin coffee Etsy 3 wolf moon slow-carb Schlitz roof party tousled squid
-                  vinyl. Readymade next level literally trust fund. Distillery master cleanse migas, Vice sriracha
-                  flannel chambray chia cronut.</p>
 
-                <p>Thanks,<br>Jane</p>
-                <div class="card-footer">
-                        <a class="btn btn-success btn-sm">Update</a>
-                        <a class="btn btn-danger btn-sm">Delete</a>
+                <p>Thank you!!, <br>Author</p>
+
+                <span class="float-right">
+                          <a href="" class="link-black text-sm">
+                            <i class="far fa-comments mr-1"></i> Comments (7)
+                          </a>
+                  </span>
+
+                <div class="card-footer pt-5">
+                        <a class="btn btn-success">Update</a>
+                        <a class="btn btn-danger">Delete</a>
                     </div>
               </div>
               <!-- /.mailbox-read-message -->

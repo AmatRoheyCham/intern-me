@@ -5,12 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Navbar &amp; Tabs</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../libraries/custom/style.css">
   <link rel="stylesheet" href="../libraries\bootstrap5\css\bootstrap.min.css">
-
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
@@ -28,20 +26,27 @@
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>intern-me</title>
 </head>
 <body class="">
     <div >
       <!-- Nav Begins -->
       <nav class="navbar navbar-expand-lg navbar-light bg-dark text-white fixedtop pt-3">
             <div class="container">
-                <a class="navbar-brand text-warning text-bold" href="home.php">INTERN~ME</a>
+                <a class="navbar-brand text-warning text-bold" href="index.php">INTERN~ME</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                  
+                <li class="nav-item dropdown">
+                        <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link text-light dropdown-toggle">Categories</a>
+                        <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow" style="left: 0px; right: inherit;">
+                        <li><a href="../students/index.php" class="dropdown-item">Students</a></li>
+                        <li><a href="../mentors/index.php" class="dropdown-item">Mentors</a></li>
+                        <li><a href="../companies/index.php" class="dropdown-item">Companies</a></li>
+                        </ul>
+                    </li> 
                     <a class="nav-item nav-link active mr-2 text-white" href="view-companies.php">Companies</a>
                     <a class="nav-item nav-link active mr-2 text-white" href="view-mentors.php">Mentors</a>
                     <a class="nav-item btn btn-warning nav-link active mr-2 text-white" href="">My Applications</a>

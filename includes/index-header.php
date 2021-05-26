@@ -46,9 +46,9 @@
                     <li class="nav-item dropdown">
                         <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link text-light dropdown-toggle">Categories</a>
                         <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow" style="left: 0px; right: inherit;">
-                        <li><a href="students/home.php" class="dropdown-item">Students</a></li>
-                        <li><a href="mentors/mentors.php" class="dropdown-item">Mentors</a></li>
-                        <li><a href="companies/companies.php" class="dropdown-item">Companies</a></li>
+                        <li><a href="students/index.php" class="dropdown-item">Students</a></li>
+                        <li><a href="mentors/index.php" class="dropdown-item">Mentors</a></li>
+                        <li><a href="companies/index.php" class="dropdown-item">Companies</a></li>
                         </ul>
                     </li>
                     <a class="nav-item nav-link active mr-2 text-secondary" href="login.php">Login</a>

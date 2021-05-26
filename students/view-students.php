@@ -1,4 +1,4 @@
-<?php include('includes/home-header.php') ?>
+<?php include('includes/students-header.php') ?>
 
 <div class="row pt-4">
     <h3 class="text-center">Students</h3>
@@ -99,3 +99,17 @@
                 </div>
                 </div>
 </div>
+
+
+
+<script src="../libraries/bootstrap5/js/bootstrap.bundle.min.js"></script>
+<!-- jQuery -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../dist/js/demo.js"></script>
+</body>
+</html>

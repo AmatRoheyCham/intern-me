@@ -5,7 +5,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Navbar &amp; Tabs</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -29,10 +28,35 @@
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>intern-me</title>
 </head>
-<body>
-<h1>sometext</h1>
+<body >
+    <div >
+      <!-- Nav Begins -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark text-white fixedtop pt-3">
+            <div class="container">
+                <a class="navbar-brand text-warning text-bold" href="index.php">INTERN~ME</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+				
+                <div class="navbar-nav">
+                    <!-- <li class="nav-item dropdown">
+                        <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link text-light dropdown-toggle">Registrations</a>
+                        <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow" style="left: 0px; right: inherit;">
+                        <li><a href="students/home.php" class="dropdown-item">Students</a></li>
+                        <li><a href="mentors/mentors.php" class="dropdown-item">Mentors</a></li>
+                        <li><a href="companies/companies.php" class="dropdown-item">Companies</a></li>
+                        </ul>
+                    </li> -->
+                    <a class="nav-item nav-link active mr-2 text-secondary" href="">profile</a>
+                    <button type="button" class="btn btn-outline-warning" onclick=' location.href="../index.php" '>Log Out</button>
+                </div>
+                </div>
+            </div>
+        </nav>
+      <!-- Nav Ends -->
     
 <!-- jQuery -->
 <script src="../plugins/jquery/jquery.min.js"></script>
