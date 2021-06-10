@@ -8,6 +8,8 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../libraries/custom/style.css">
+  <link rel="stylesheet" href="../libraries/custom/stylo.css">
+
   <link rel="stylesheet" href="../libraries\bootstrap5\css\bootstrap.min.css">
 
   <!-- Font Awesome -->
@@ -42,18 +44,18 @@
                 <li class="nav-item dropdown">
                         <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link text-light dropdown-toggle">Categories</a>
                         <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow" style="left: 0px; right: inherit;">
-                        <li><a href="../students/index.php" class="dropdown-item">Students</a></li>
-                        <li><a href="../mentors/index.php" class="dropdown-item">Mentors</a></li>
-                        <li><a href="../companies/index.php" class="dropdown-item">Companies</a></li>
+                        <li><a href="../students/index.php" class="dropdown-item"><b>Students</b></a></li>
+                        <li><a href="../mentors/index.php" class="dropdown-item"><b>Mentors</b></a></li>
+                        <li><a href="../companies/index.php" class="dropdown-item"><b>Companies</b></a></li>
                         </ul>
                     </li> 
-                    <a class="nav-item nav-link active mr-2 text-white" href="view-companies.php">Companies</a>
-                    <a class="nav-item nav-link active mr-2 text-white" href="view-mentors.php">Mentors</a>
-                    <a class="nav-item btn btn-warning nav-link active mr-2 text-white" href="">My Applications</a>
-                    <a class="nav-item nav-link active mr-2 text-warning" href=""><i class="fa fa-user-circle"></i></a>
+                    <a class="nav-item nav-link active mr-2 text-white" href="view-companies.php"><b>Companies</b></a>
+                    <a class="nav-item nav-link active mr-2 text-white" href="view-mentors.php"><b>Mentors</b></a>
+                    <a class="nav-item btn btn-warning nav-link active mr-2 text-white" href=""><b>My Applications</b></a>
+                    <a class="nav-item nav-link active mr-2 text-warning" href=""><b><i class="fa fa-user-circle"></i></b></a>
                     <li class="nav-item mr-4 dropdown">
                       <a class="nav-link" data-toggle="dropdown" href="#">
-                        <i class="far fa-bell text-lg text-white"></i>
+                        <b><i class="far fa-bell text-lg text-white"></i></b>
                         <span class="badge badge-warning navbar-badge">15</span>
                       </a>
                       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">

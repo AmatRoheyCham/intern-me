@@ -50,7 +50,7 @@
                 <!-- /.card-body -->
                 <div class="card-footer">
                   <button type="submit" name='signup' class="btn btn-primary">Submit</button>
-                  <button type="button" name='cancel' class="btn btn-outline-warning float-right" onclick=' location.href="home.php" '>Cancel</button>
+                  <button type="button" name='cancel' class="btn btn-outline-warning float-right" onclick=' location.href="index.php" '>Cancel</button>
                 </div>
               </form>
             </div>

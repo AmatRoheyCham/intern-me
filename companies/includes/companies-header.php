@@ -8,6 +8,7 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="libraries/custom/style.css">
+  <link rel="stylesheet" href="libraries/custom/stylo.css">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
@@ -30,7 +31,7 @@
 <body>
     <div >
       <!-- Nav Begins -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-dark text-white fixedtop pt-3">
+      <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-light bg-dark text-white fixedtop pt-3">
             <div class="container">
                 <a class="navbar-brand text-warning text-bold" href="index.php">INTERN~ME</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,8 +47,9 @@
                         <li><a href="../companies/index.php" class="dropdown-item">Companies</a></li>
                         </ul>
                     </li>           
-                    <a class="nav-item nav-link active mr-2 text-warning" href=""><i class="fa fa-user-circle"></i></a>
-                    <button type="button" class="btn btn-outline-warning mx-1" onclick=' location.href="post_internship.php" '>Post Internship</button>
+                    <a class="nav-item nav-link active mr-2 text-warning" href=""><i class="fa fa-user-circle">Profile</i></a>
+                    <button type="button" class="btn btn-outline-warning mx-1" onclick=' location.href="" '>Dashboard</button>
+                    <button type="button" class="btn btn-outline-warning mx-1" onclick=' location.href="post_internship.php" '> <i class="fas fa-plus"></i> Post Internship</button>
                     <button type="button" class="btn btn-outline-warning ml-5" onclick=' location.href="../index.php" '>Logout</button>
                 </div>
                 </div>

@@ -72,7 +72,7 @@
 
     <div class="container">
     <h3 class="text-center pt-3">Recent Posts</h3>
-        <div class="card">
+        <div class="card shadow">
 
                     <div class="card-body">
                     <h3 class="card-title"><strong> Title</strong></h3>
@@ -88,7 +88,7 @@
                     </div>
         </div>
 
-        <div class="card">
+        <div class="card shadow">
 
                     <div class="card-body">
                     <h3 class="card-title"><strong> Title</strong></h3>
@@ -104,7 +104,7 @@
                     </div>
         </div>
 
-        <div class="card">
+        <div class="card shadow">
 
                     <div class="card-body">
                     <h3 class="card-title"><strong> Title</strong></h3>

@@ -33,7 +33,7 @@ body {
   background-position: center;
   height: 100vh;
 }
-#studentsForm{
+#studentsForm {
   display: none;
 }
 #mentorsForm {
@@ -42,7 +42,6 @@ body {
 #companiesForm {
   display: none;
 }
-
 
 /* Form control */
 

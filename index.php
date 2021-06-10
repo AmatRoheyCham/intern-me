@@ -1,5 +1,9 @@
 
-<?php include('includes/index-header.php')?>
+<?php 
+  include('includes/index-header.php');
+  include('includes/mysqli-connection.php');
+
+?>
 
 <div class=" rounded-3">
 <div class="container-fluid padd-left pt-2 py-4 bg-dark text-white">
@@ -29,7 +33,7 @@
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-auto mb-5 mb-md-7">
-              <h1 class="fw-semi-bold text-warning">Our <span class="text-1100">resources</span></h1>
+              <h1 class="fw-semi-bold text-warning">Our <span class="text-1100">Services</span></h1>
             </div>
           </div>
           <div class="row">

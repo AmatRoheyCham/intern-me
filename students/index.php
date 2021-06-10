@@ -9,309 +9,222 @@ include('includes/students-header.php')
          <h2 class="">Get in touch with your Dream Job</h2>
           <p class="text-warning">Search for you favourite Company</p>
           <form class="w-75" method="" action="">
-                  <div class="input-group w-xl-75 w-xxl-50 d-flex flex-end-center">
-                    <input class="form-control rounded-pill border-0 font-base" id="formGroupExampleInput" type="text" placeholder="Search company name"><img class="input-box-icon me-3" src="assets/img/illustrations/search.png" width="18" alt="">
-                    <a href="" class="btn btn-warning">Search</a>
-                  </div>
+          <div class="input-group">
+               <input type="search" class="form-control form-control-lg" name="searchText" placeholder="Type your keywords here">
+                <div class="input-group-append">
+                   <button type="submit" class="btn btn-lg btn-default base1">
+                        <i class="fa fa-search"></i>
+                    </button>
+                 </div>
+               </div>
            </form>                        
         </div>
     </div>
     <!-- Header include end -->
 
-          <!-- ============================================-->
-      <!-- <section> begin ============================-->
-      <section>
 
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-auto mb-5 mb-md-7">
-      <h1 class="fw-semi-bold text-warning">LATEST <span class="text-1100">INTERNSHIPS</span></h1>
-    </div>
+<!-- Jobs in High Demand -->
+  <div class="container pt-4">
+    <h5 class="text-dark">Interns In high Demand Near You</h5>
+    <a href="" class="btn border m-1 btn-outline-secondary text-dark">System Admin</a>
+    <a href="" class="btn border m-1 btn-outline-secondary text-dark">Network Engineer</a>
+    <a href="" class="btn border m-1 btn-outline-secondary text-dark">Chemical Engineer</a>
+    <a href="" class="btn border m-1 btn-outline-secondary text-dark">Data Scientist</a>
+    <a href="" class="btn border m-1 btn-outline-secondary text-dark">Enterprenuer</a>
+    <a href="" class="btn border m-1 btn-outline-secondary text-dark">Agricultural Engineer</a>
+    <a href="" class="btn border m-1 btn-outline-secondary text-dark">Mechanical Engineer</a>
+    <a href="" class="btn border m-1 btn-outline-secondary text-dark">Statistician</a>
+    <a href="" class="btn border m-1 btn-outline-secondary text-dark">Mental Psychologist</a>
   </div>
+<!-- Jobs in High demand ends -->
+
+<!-- Urgent Hiring  -->
+<section class="container pt-4">
   <div class="row">
-    <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center">
-      <div class="px-0 px-lg-3"><img class="img-fluid mb-4" src="../images/pc1.png" width="100" alt="..." />
-        <h3 class="h5 mb-1 font-base">Company Name</h3>
-        <h5>title:</h5>
-        <p class="lh-sm">Register online Discover tools and manage alerts Learn about how to access  <a href="">Ream More</a></p>
-                <a href="apply.php" class="btn btn-success">Apply Now</a></p>
-                <div class="card-footer text-muted">
-                    2 days ago
-                </div>       
+    <div class="col-sm-12 card border shadow col-md-6 col-lg-6">
+      <h5 class="text-center text-danger pt-2"><b>Urgent Hirings <strong>!!!</strong></b></h5>
+      
+        <div class="card shadow">
+          <div class="card-body">
+            <img src="../images/logo-clock.jpg" width="100px" height="100px" alt="">
+            <h5 class="text-warning"><b>job title</b></h5>
+             <h6><b>Company-name</B></h6>
+          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Tempora error, autem incidunt fugiat corporis voluptas nihil repudiandae saepe? Tempore culpa dolorem ipsum provident
+             nostrum sit amet voluptas illum error quo. <br>
+             <strong>Due Date: 25th november 2021</strong> <br>
+             <a href="job.php" class="btn-sm btn-warning">Read More</a>
+             <a href="apply.php" class="btn-sm btn-secondary">Apply Now</a>
+            </p> 
+          </div>
+        </div>
+
+
+        <div class="card shadow">
+          <div class="card-body">
+            <img src="../images/logo-cloud.png" width="100px" height="100px" alt="">
+            <h5 class="text-warning"><b>job title</b></h5>
+             <h6><b>Company-name</B></h6>
+          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Tempora error, autem incidunt fugiat corporis voluptas nihil repudiandae saepe? Tempore culpa dolorem ipsum provident
+             nostrum sit amet voluptas illum error quo. <br>
+             <strong>Due Date: 25th november 2021</strong> <br>
+             <a href="job.php" class="btn-sm btn-warning">Read More</a>
+             <a href="apply.php" class="btn-sm btn-secondary">Apply Now</a>
+            </p> 
+          </div>
+        </div>
+
+        <div class="card shadow">
+          <div class="card-body">
+            <img src="../images/logo-lorem.jpg" width="100px" height="100px" alt="">
+            <h5 class="text-warning"><b>job title</b></h5>
+             <h6><b>Company-name</B></h6>
+          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Tempora error, autem incidunt fugiat corporis voluptas nihil repudiandae saepe? Tempore culpa dolorem ipsum provident
+             nostrum sit amet voluptas illum error quo. <br>
+             <strong>Due Date: 25th november 2021</strong> <br>
+             <a href="job.php" class="btn-sm btn-warning">Read More</a>
+             <a href="apply.php" class="btn-sm btn-secondary">Apply Now</a>
+            </p> 
+          </div>
+        </div>
+
+        <!-- Recently Added Scetion -->
+ 
+</div>
+    <div class="col-sm-12 card border shadow col-md-6 col-lg-6">
+    <h5 class="text-center text-dark pt-2"><b>Recently Added Jobs</b></h5>
+      <div class="card">
+        <h5 class="card-header">Featured</h5>
+        <div class="card-body">
+          <h5 class="card-title">Job Title</h5>
+          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Tempora error, autem incidunt fugiat corporis voluptas nihil repudiandae saepe? Tempore culpa dolorem ipsum provident
+             nostrum sit amet voluptas illum error quo. <br>
+             <strong>Due Date: 25th november 2021</strong> <br>
+             <a href="job.php" class="btn-sm btn-warning">Read More</a>
+             <a href="apply.php" class="btn-sm btn-secondary">Apply Now</a>
+            </p> 
+        </div>
+      </div>
+
+      <div class="card">
+        <h5 class="card-header">Featured</h5>
+        <div class="card-body">
+          <h4 class="card-title">Job Title</h4>
+          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Tempora error, autem incidunt fugiat corporis voluptas nihil repudiandae saepe? Tempore culpa dolorem ipsum provident
+             nostrum sit amet voluptas illum error quo. <br>
+             <strong>Due Date: 25th november 2021</strong> <br>
+             <a href="job.php" class="btn-sm btn-warning">Read More</a>
+             <a href="apply.php" class="btn-sm btn-secondary">Apply Now</a>
+            </p> 
+        </div>
+      </div>
+
+      <div class="card">
+        <h5 class="card-header">Featured</h5>
+        <div class="card-body">
+          <h5 class="card-title">Job Title</h5>
+          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Tempora error, autem incidunt fugiat corporis voluptas nihil repudiandae saepe? Tempore culpa dolorem ipsum provident
+             nostrum sit amet voluptas illum error quo. <br>
+             <strong>Due Date: 25th november 2021</strong> <br>
+             <a href="job.php" class="btn-sm btn-warning">Read More</a>
+             <a href="apply.php" class="btn-sm btn-secondary">Apply Now</a>
+            </p> 
+        </div>
       </div>
     </div>
-    <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center">
-      <div class="px-0 px-lg-3"><img class="img-fluid mb-4" src="../images/pc2.png" width="100" alt="..." />
-          <h3 class="h5 mb-1 font-base">Company Name</h3>
-          <h5>title:</h5>
-          <p class="lh-sm">Register online Discover tools and manage alerts Learn about how to access  <a href="">Ream More</a></p>
-                  <a href="apply.php" class="btn btn-success">Apply Now</a></p>
-                  <div class="card-footer text-muted">
-                      2 days ago
-                  </div>       
-        </div>
-    </div>
-    <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center">
-      <div class="px-0 px-lg-3"><img class="img-fluid mb-4" src="../images/pc setup1.png" width="100" alt="..." />
-          <h3 class="h5 mb-1 font-base">Company Name</h3>
-          <h5>title:</h5>
-          <p class="lh-sm">Register online Discover tools and manage alerts Learn about how to access  <a href="">Ream More</a></p>
-                  <a href="apply.php" class="btn btn-success">Apply Now</a></p>
-                  <div class="card-footer text-muted">
-                      2 days ago
-                  </div>       
-        </div>
-    </div>
-    <div class="col-sm-6 col-lg-3 mb-4 mb-lg-0 text-center">
-      <div class="px-0 px-lg-3"><img class="img-fluid mb-4" src="../images/bulb3.png" width="100" alt="..." />
-          <h3 class="h5 mb-1 font-base">Company Name</h3>
-          <h5>title:</h5>
-          <p class="lh-sm">Register online Discover tools and manage alerts Learn about how to access  <a href="">Ream More</a></p>
-                  <a href="apply.php" class="btn btn-success">Apply Now</a></p>
-                  <div class="card-footer text-muted">
-                      2 days ago
-                  </div>       
-        </div>
-    </div>
   </div>
-        <div class="text-center pt-3">
-          <a href="" class="btn btn-warning">Read More</a></p>
-        </div>
-</div>
-<!-- end of .container-->
-
 </section>
-<!-- <section> close ============================-->
-<!-- ============================================-->
 
-   
+<!-- Urgent hiring ends -->
 
-     <!-- TOP HIRING COMPANIES STARTS -->
-   
-    <h3 class="text-center py-4">Top Hiring Companies</h3>
-        <div class="container">
-            <div id="demo" class="carousel slide" data-ride="carousel">
-            <div class="card card-warning">
-              <div class="card-header">
-                <h3 class="card-title">Companies</h3>
+<!-- TOp Hiring Modified -->
+<div class="container pt-4">
+  <h6 class="text-center">OVER 500 REGISTERED JOBS</h6>
+  <h2 class="text-center"><b>Top Hiring Companies</b></h2>
+  <div class="container text-center pt-4">
+    <a href="" class="btn border m-1 btn-outline-secondary text-dark"><img class="img-fluid" width="150px" height="150px" src="../images/logo-social.png" alt=""></a>
+    <a href="" class="btn border m-1 btn-outline-secondary text-dark"><img class="img-fluid" width="150px" height="150px" src="../images/logo-cloud.png" alt=""></a>
+    <a href="" class="btn border m-1 btn-outline-secondary text-dark"><img class="img-fluid" width="150px" height="150px" src="../images/logo-logo.jpg" alt=""></a>
+    <a href="" class="btn border m-1 btn-outline-secondary text-dark"><img class="img-fluid" width="150px" height="150px" src="../images/logo-logo.jpg" alt=""></a>
+    <a href="" class="btn border m-1 btn-outline-secondary text-dark"><img class="img-fluid" width="150px" height="150px" src="../images/logo-social.png" alt=""></a>
+    <a href="" class="btn border m-1 btn-outline-secondary text-dark"><img  class="img-fluid" width="150px" height="150px" src="../images/pc3 fav.png" alt=""></a>
+    <a href="" class="btn border m-1 btn-outline-secondary text-dark"><img  class="img-fluid" width="150px" height="150px" src="../images/pc1.png" alt=""></a>
+    <a href="" class="btn border m-1 btn-outline-secondary text-dark"><img class="img-fluid" width="150px" height="150px" src="../images/pc2.png" alt=""></a>
+    <a href="" class="btn border m-1 btn-outline-secondary text-dark"><img class="img-fluid" width="150px" height="150px" src="../images/logo-cloud.png" alt=""></a>
+    <a href="" class="btn border m-1 btn-outline-secondary text-dark"><img  class="img-fluid" width="150px" height="150px" src="../images/logo-cloud.png" alt=""></a>
 
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
-                </div>
-              </div>
-              <div class="card-body">
-                <!-- <div class="chart"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                  <canvas id="stackedBarChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 395px;" width="395" height="250" class="chartjs-render-monitor"></canvas>
-                </div> -->
-                <table class="table">
-                    <tr>
-                        <th>Logo:</th>
-                        <th>id:</th>
-                        <th>Name:</th>
-                        <th>Category:</th>
-                        <th>Number of Interns:</th>
-                    </tr>
-                    <tr>
-                        <td><i class="fa fa-user"></i></td>
-                        <td>1</td>
-                        <td>Company b</td>
-                        <td>Enterprenuer</td>
-                        <td>15</td>
-                        <td><a href="" class="btn btn-sm btn-warning">Details</a></td>
-                    </tr>
-                    <tr>
-                       <td><i class="fa fa-clock"></i></td>
-                        <td>2</td>
-                        <td>Company y</td>
-                        <td>Statistician</td>
-                        <td>15</td>
-                        <td><a href="" class="btn btn-sm btn-warning">Details</a></td>
-                    </tr>
-                    <tr>
-                     <td><i class="fa fa-home"></i></td>
-                        <td>3</td>
-                        <td>Company z</td>
-                        <td>Politics</td>
-                        <td>15</td>
-                        <td><a href="" class="btn btn-sm btn-warning">Details</a></td>
-                    </tr>
-                    <tr>
-                     <td><i class="fa fa-mobile"></i></td>
-                        <td>4</td>
-                        <td>Company a</td>
-                        <td>Banking</td>
-                        <td>15</td>
-                        <td><a href="" class="btn btn-sm btn-warning">Details</a></td>
-                    </tr>
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
-        
-        </div>
+  </div>
+</div>
+<!-- TOp Hiring Modified ends -->
 
+<!-- Mentorship Modified STart -->
+<div class="container pt-5 text-center">
+  <h6>HELPFUL SECTION TO KNOW YOUR CAREER STATUS</h6>
+  <h2><b>Career Development & Guidances</b></h2>
 
-</div>   
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-lg-4 mb-3">
+            <div class="card mb-3 h-100">
 
-
-    <!-- MENTORSHIPS STARTS -->
-    <div class="container py-4 card">
-    <section class="py-8" id="books">
-          <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6 text-center mb-7">
-              <h1 class="fw-semi-bold text-warning">Most Review<span class="text-1100"> Mentorships</span></h1>
-            </div>
-            <div class="col-lg-9">
-              <div class="accordion" id="accordionExample">
-          
-              <div class="accordion-item mb-5 border border-x-0 border-bottom-0 border-200">
-                  <div class="accordion-header" id="post1">
-                    <div class="accordion-button collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#post1" aria-expanded="false" aria-controls="collapse1">
-                      <div class="row w-100 justify-content-center">
-                        <div class="col-sm-6 font-base"><span class="mb-0 fw-bold text-start fs-1 text-1200">Mentor Post 1</span>
-                          <p class="my-2">Name:</p>
-                        </div>
-                        <div class="col-8 col-sm-4">
-                        </div>
-                        <div class="col-4 col-sm-2 text-end">
-                          <h5 class="mb-0 font-base fw-bold">21</h5>
-                        </div>
-                      </div>
-                    </div>
+                <div class="card-body">
+                <h5 class="card-title text-bold">TITLE</h5>
+                    <p class="card-text">Strengthen your human network with scalable mentorship.
+                       Achieve breakthrough performance for your people and your organization.</p>
+                    <a href="" class="btn btn-outline btn-sm btn-secondary">click to read more</a>
                   </div>
-                  <div class="accordion-collapse shadow-lg collapse" id="post1" aria-labelledby="post1" data-bs-parent="#accordionExample" style="">
-                    <div class="accordion-body">
-                      <div class="row justify-content-center-center">
-                        <div class="col-12 col-sm-2"><img class="img-fluid d-block mx-auto mx-sm-0" src="../images/pc2.png" width="130" alt="..."></div>
-                        <div class="col-12 col-sm-9 mt-4 mt-sm-0 d-sm-block d-flex flex-column">
-                         <!-- TEXT HERE  --> 
-                         <p>
-                        Lorem ipsum represents a long-held tradition for designers,
-                        typographers and the like. Some people hate it and argue for
-                        its demise, but others ignore the hate as they create awesome
-                        tools to help create filler text for everyone from bacon lovers
-                        to Charlie Sheen fans.
-                      </p>
-                      <p>
-                        <a href="" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like</a>
-                        <span class="float-right">
-                          <a href="" class="link-black text-sm">
-                            <i class="far fa-comments mr-1"></i> Comments (5)
-                          </a>
-                        </span>
-                      </p>
-                          <a href="" class="btn btn-warning btn-sm">Read More here!</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                 
-
-     
-                <div class="accordion-item mb-5 border border-x-0 border-bottom-0 border-200">
-                  <div class="accordion-header" id="heading3">
-                    <div class="accordion-button collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#post2" aria-expanded="false" aria-controls="collapse1">
-                      <div class="row w-100 justify-content-center">
-                        <div class="col-sm-6 font-base"><span class="mb-0 fw-bold text-start fs-1 text-1200">Mentor Post 1</span>
-                          <p class="my-2">Name:</p>
-                        </div>
-                        <div class="col-8 col-sm-4">
-                        </div>
-                        <div class="col-4 col-sm-2 text-end">
-                          <h5 class="mb-0 font-base fw-bold">21</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="accordion-collapse shadow-lg collapse" id="post2" aria-labelledby="heading3" data-bs-parent="#accordionExample" style="">
-                    <div class="accordion-body">
-                      <div class="row justify-content-center-center">
-                        <div class="col-12 col-sm-2"><img class="img-fluid d-block mx-auto mx-sm-0" src="../images/pc2.png" width="130" alt="..."></div>
-                        <div class="col-12 col-sm-9 mt-4 mt-sm-0 d-sm-block d-flex flex-column">
-                         <!-- TEXT HERE  --> 
-                         <p>
-                        Lorem ipsum represents a long-held tradition for designers,
-                        typographers and the like. Some people hate it and argue for
-                        its demise, but others ignore the hate as they create awesome
-                        tools to help create filler text for everyone from bacon lovers
-                        to Charlie Sheen fans.
-                      </p>
-                      <p>
-                        <a href="" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like</a>
-                        <span class="float-right">
-                          <a href="" class="link-black text-sm">
-                            <i class="far fa-comments mr-1"></i> Comments (5)
-                          </a>
-                        </span>
-                      </p>
-                          <a href="" class="btn btn-warning btn-sm">Read More here!</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                 
-
-                <div class="accordion-item mb-5 border border-x-0 border-bottom-0 border-200">
-                  <div class="accordion-header" id="heading3">
-                    <div class="accordion-button collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#post3" aria-expanded="false" aria-controls="collapse1">
-                      <div class="row w-100 justify-content-center">
-                        <div class="col-sm-6 font-base"><span class="mb-0 fw-bold text-start fs-1 text-1200">Mentor Post 1</span>
-                          <p class="my-2">Name:</p>
-                        </div>
-                        <div class="col-8 col-sm-4">
-                        </div>
-                        <div class="col-4 col-sm-2 text-end">
-                          <h5 class="mb-0 font-base fw-bold">21</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="accordion-collapse shadow-lg collapse" id="post3" aria-labelledby="heading3" data-bs-parent="#accordionExample" style="">
-                    <div class="accordion-body">
-                      <div class="row justify-content-center-center">
-                        <div class="col-12 col-sm-2"><img class="img-fluid d-block mx-auto mx-sm-0" src="../images/pc2.png" width="130" alt="..."></div>
-                        <div class="col-12 col-sm-9 mt-4 mt-sm-0 d-sm-block d-flex flex-column">
-                         <!-- TEXT HERE  --> 
-                         <p>
-                        Lorem ipsum represents a long-held tradition for designers,
-                        typographers and the like. Some people hate it and argue for
-                        its demise, but others ignore the hate as they create awesome
-                        tools to help create filler text for everyone from bacon lovers
-                        to Charlie Sheen fans.
-                      </p>
-                      <p>
-                        <a href="" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> Like</a>
-                        <span class="float-right">
-                          <a href="" class="link-black text-sm">
-                            <i class="far fa-comments mr-1"></i> Comments (5)
-                          </a>
-                        </span>
-                      </p>
-                          <a href="" class="btn btn-warning btn-sm">Read More here!</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                 
-              
-         
-            <div class="col-lg-12 d-flex justify-content-center">
-              <button class="btn btn-sm btn-warning rounded-pill font-base" type="submit">Find More </button>
             </div>
         </div>
-        <!-- end of .container-->
-
-      </section>
+        <div class="col-sm-6 col-lg-4 mb-3">
+            <div class="card mb-3 h-100">
+                <div class="card-body">
+                <h5 class="card-title text-bold">TITLE</h5>
+                    <p class="card-text">We are on a mission to impact 100 million people with the power of mentorship. We offer comprehensive technology-enabled
+                       solutions to launch and run scalable mentorship programs.</p>
+                    <a href="" class="btn btn-outline btn-sm btn-secondary">click to read more</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-3">
+            <div class="card mb-3 h-100">
+                <div class="card-body">
+                <h5 class="card-title text-bold">TITLE</h5>
+                    <p class="card-text"> Our commitment is to help your organization and your people win with mentoring..This content is a little bit longer.</p>
+                    <a href="" class="btn btn-outline btn-sm btn-secondary">click to read more</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-3">
+            <div class="card mb-3 h-100">
+                <div class="card-body">
+                <h5 class="card-title text-bold">TITLE</h5>
+                    <p class="card-text">Schedule a no-obligation conversation today. You will be glad you did!</p>
+                    <a href="" class="btn btn-outline btn-sm btn-secondary">click to read more</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-3">
+            <div class="card mb-3 h-100">
+                <div class="card-body">
+                <h5 class="card-title text-bold">TITLE</h5>
+                    <p class="card-text">You are making mentorship a strategic priority. We will help you scale it right and win.</p>
+                    <a href="" class="btn btn-outline btn-sm btn-secondary">click to read more</a>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+</div>
+</div>
 
+  <hr class="text-bold">
+<!-- Mentorship Modified STart ends -->
 
-
-    <!-- MENTORSHIPS ENDS -->
 
 
     

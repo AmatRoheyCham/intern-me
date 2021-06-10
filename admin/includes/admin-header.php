@@ -11,6 +11,8 @@
 
   <script src="libraries\custom\script.js"></script>
   <link rel="stylesheet" href="libraries\custom\style.css">
+  <link rel="stylesheet" href="libraries/custom/stylo.css">
+
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
@@ -50,6 +52,7 @@
                         <li><a href="companies/companies.php" class="dropdown-item">Companies</a></li>
                         </ul>
                     </li> -->
+                    <button type="button" class="btn btn-outline-warning mx-1" onclick=' location.href="" '> Manage Users <i class="fas fa-pen"></i></button>
                     <a class="nav-item nav-link active mr-2 text-secondary" href="">profile</a>
                     <button type="button" class="btn btn-outline-warning" onclick=' location.href="../index.php" '>Log Out</button>
                 </div>
