@@ -1,0 +1,61 @@
+
+
+
+ <!-- data-toggle="modal" data-target="#myRejectModal" -->
+
+  <!-- Modal ADD -->
+  <div class="modal fade" id="myAddModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+        <h4>Approve and Set Interview</h4>
+            <form method="POST" action="approve-application.php">
+            <fieldset class="w-50">
+                <div class="mb-3">
+                <label for="" class="form-label">Date</label>
+                <input type="date" id="" name="date" class="form-control" placeholder="Category date">
+                </div>
+                <div class="mb-3">
+                <label for="" class="form-label">Category Type</label>
+                <input type="time" id="" name="time" class="form-control" placeholder="interview time">
+                </div>
+            
+                <button type="submit"  name="approve-application" class="btn btn-primary">Set Interview</button>
+            </fieldset>
+            </form>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL ADD ENDS -->
+
+  <!-- Modal Reject -->
+  <div class="modal fade" id="myRejectModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+        <h4>Reject This Application</h4>
+            <form method="POST" action="reject-application.php">
+            <fieldset class="w-50">
+                <button type="submit"  name="reject-application" class="btn btn-primary">Confirm</button>
+            </fieldset>
+            </form>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- MODAL Reject ENDS -->

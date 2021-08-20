@@ -1,8 +1,10 @@
 
 <?php
 
+define("SITEURL", "http://localhost/intern-me/");
+
     $dbUser = "root";
-    $dbPassword = "rohey593";
+    $dbPassword = "";
     $dbHost = "localhost";
     $dbName = "intern_me";
 

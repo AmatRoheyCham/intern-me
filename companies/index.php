@@ -1,25 +1,34 @@
 <?php
-include('includes/companies-header.php')
+include('includes/companies-header.php');
+
+$companyName =$_SESSION['companyName'];
+$companyId = $_SESSION['companyId'];
+
+if (isset($_SESSION['post-successful'])) {
+  # code...
+  echo $_SESSION['post-successful'];
+}
+
 ?>
 
 <!--  -->
-                    <div class="container-fluid py-3 bg-dark">
-                        <h2 class="text-center display-6 pt-1 text-white mt-5">Search Students by Major</h2>
-                        <div class="row">
-                            <div class="col-md-8 offset-md-2">
-                                <form action="">
-                                    <div class="input-group">
-                                        <input type="search" class="form-control form-control-lg" name="searchText" placeholder="Type your keywords here">
-                                        <div class="input-group-append">
-                                            <button type="submit" class="btn btn-lg btn-default base1">
-                                                <i class="fa fa-search"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+  <div class="container-fluid py-3 bg-dark">
+      <h2 class="text-center display-6 pt-1 text-white mt-5">Search Students by Major</h2>
+      <div class="row">
+          <div class="col-md-8 offset-md-2">
+              <form action="">
+                  <div class="input-group">
+                      <input type="search" class="form-control form-control-lg" name="searchText" placeholder="Type your keywords here">
+                      <div class="input-group-append">
+                          <button type="submit" class="btn btn-lg btn-default base1">
+                              <i class="fa fa-search"></i>
+                          </button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
 
 <!-- search includes ends -->
 
@@ -30,14 +39,20 @@ include('includes/companies-header.php')
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>10</h3>
+              <?php
+              include_once('../const/mysqli-connection.php');
+              $queryPost = "SELECT * FROM intern_post WHERE company_name = '$companyName'";
+              $postResult = mysqli_query($dbConnection,$queryPost);
+              $countPost = mysqli_num_rows($postResult);
+              ?>
+                <h3><?php echo $countPost?></h3>
 
                 <p>Recent Posts</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="recent-post.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -45,14 +60,21 @@ include('includes/companies-header.php')
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53</h3>
+
+              <?php
+                include_once('../const/mysqli-connection.php');
+                $queryApplication = "SELECT * FROM applications WHERE company_id = $companyId  AND is_accepted=0";
+                $applicationResult = mysqli_query($dbConnection,$queryApplication);
+                $countApplication = mysqli_num_rows($applicationResult);
+              ?>
+                <h3><?php echo $countApplication?></h3>
 
                 <p>New Applications</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="new-applications.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -60,14 +82,22 @@ include('includes/companies-header.php')
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
+
+              <?php
+                include_once('../const/mysqli-connection.php');
+                $queryInterview = "SELECT * FROM interviews WHERE company_id = $companyId";
+                $interviewResult = mysqli_query($dbConnection,$queryInterview);
+                $countInterview = mysqli_num_rows($interviewResult);
+              ?>
+                <h3><?php echo $countInterview?></h3>
+
 
                 <p>Upcoming Interviews</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="interviews.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -75,7 +105,7 @@ include('includes/companies-header.php')
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+                <h3>0</h3>
 
                 <p>Requests</p>
               </div>
@@ -89,55 +119,76 @@ include('includes/companies-header.php')
         </div>
  </div>
 
+
+  
+
+
  <div class="container pt-4">
  <!-- New Registered Companies  -->
  <div class="card pt-4 shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">New Internship Applications</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="dataTable_length"><label>Show <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="dataTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label></div></div></div><div class="row"><div class="col-sm-12"><table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
-                                <thead>
-                                        <tr role="row"><th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 78px;">Name</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 117px;">Email</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 56px;">Major</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 68px;">Application date</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Action</th></tr>
-                                </thead>
-                                    <tfoot>
-                                    </tfoot>
-                                    <tbody>      
-                                        
-                                    <tr class="odd">
-                                            <td class="sorting_1">Airi Satou</td>
-                                            <td>111@mail.com</td>
-                                            <td>Mathematics</td>
-                                            <td>2008/11/28</td>
-                                            <td><a href="" class="btn btn-secondary text-center">View details</a>
-                                            <a href="" class="btn btn-success">verify</a>
-                                            <a href="" class="btn btn-danger">reject</a></td>
-                                        </tr><tr class="even">
-                                            <td class="sorting_1">Angelica Ramos</td>
-                                            <td>111@mail.com</td>
-                                            <td>Info System</td>
-                                            <td>2009/10/09</td>
-                                            <td><a href="" class="btn btn-secondary text-center">View details</a>
-                                            <a href="" class="btn btn-success">verify</a>
-                                            <a href="" class="btn btn-danger">reject</a></td>
-                                        </tr><tr class="odd">
-                                            <td class="sorting_1">Ashton Cox</td>
-                                            <td>111@mail.com</td>
-                                            <td>Chemistry</td>
-                                            <td>2009/01/12</td>
-                                            <td><a href="" class="btn btn-secondary text-center">View details</a>
-                                            <a href="" class="btn btn-success">verify</a>
-                                            <a href="" class="btn btn-danger">reject</a></td>
-                                        </tr></tbody>
-                                </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="dataTable_previous"><a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="dataTable_next"><a href="#" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">New Internship Applications</h6>
+    </div>
+    <div class="card-body">
+        <table class="table table-secondary">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">email</th>
+              <th scope="col">Major</th>
+              <th scope="col">CV</th>
+              <th scope="col">Transcript</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+          <?php
+            include_once("../const/mysqli-connection.php");
+
+          $query = "SELECT * FROM students INNER JOIN applications ON students.id=applications.student_id WHERE applications.is_accepted=0 
+          AND company_name = '$companyName' LIMIT 7";
+          $result = mysqli_query($dbConnection, $query);
+          // $row1 = mysqli_fetch_assoc($result);
+          // print_r($row1);
+          while ($row = mysqli_fetch_assoc($result)) {
+            $firstName = $row['first_name'];
+            $lastName = $row['last_name'];
+            $id = $row['id'];
+            // $_SESSION['studentId'] = $row['student_id'];
+            $studentId = $row['student_id'];
+            $email = $row['email'];
+            $major = $row['major'];
+            $transcript = $row['student_transcript'];
+            $cv = $row['student_cv'];
+            
+            ?>
+
+
+            <tr>
+              <th scope="row"><?php echo $id?></th>
+              <td><?php echo $firstName?></td>
+              <td><?php echo $lastName?></td>
+              <td><?php echo $email?></td>
+              <td><?php echo $major?></td>
+              <td><a href="../students/files/<?php echo $cv?>" target="_blank">Cv</a></td>
+              <td><a href="../students/files/<?php echo $transcript?>" target="_blank">Transcript</a></td>
+              <td>
+                <a href="add-interview.php?studentAddId=<?php echo $studentId?>" class="btn btn-success" ><i class="fa fa-check"></i></a>
+                <a href="reject-application.php?studentId=<?php echo $studentId?>" class="btn btn-danger"><i class="fas fa-window-close"></i></a>
+                <!-- <a href="" class="btn btn-secondary">Read More</a> -->
+              </td>
+            </tr>
+            <?php
+          }
+
+       
+          ?>
+          </tbody>
+        </table>
+        <h6 class="m-0 font-weight-bold text-primary pt-4"><a class="btn btn-outline-success" href="new-applications.php">See More Here</a></h6>
+    </div>
 </div>
 
 
@@ -155,4 +206,14 @@ include('includes/companies-header.php')
 <script src="../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
+
+ <!-- jQuery CDN - Slim version (=without AJAX) -->
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+  </body>
+  </html>
 

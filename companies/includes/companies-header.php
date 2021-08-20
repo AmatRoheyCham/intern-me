@@ -1,3 +1,23 @@
+<?php
+    session_start();
+    require_once("../const/mysqli-connection.php");
+    if (isset($_SESSION['already-logged-in'])) {
+        echo $_SESSION['already-logged-in'];
+        unset($_SESSION['already-logged-in']);
+    }
+ 
+    if (!isset($_SESSION['companyName'])) {
+        $_SESSION['not-logged-in'] = '
+        <div class="alert container mt-4 mb-0 alert-warning alert-dismissible fade show">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>You Must Log in to Access Companies panel!!</strong>
+      </div>
+        ';
+        header("location:../index.php");
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +27,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="libraries/custom/style.css">
+  <link rel="stylesheet" href="../libraries/custom/style.css">
   <link rel="stylesheet" href="libraries/custom/stylo.css">
+  <!-- Bootstraap -->
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
@@ -22,11 +48,17 @@
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+     <!-- SEMANTIC UI CSS -->
+<!-- Semantic Ui -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
 
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>intern-me</title>
+
 </head>
 <body>
     <div >
@@ -39,23 +71,15 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">       
-                   <li class="nav-item dropdown">
-                        <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link text-light dropdown-toggle">Categories</a>
-                        <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow" style="left: 0px; right: inherit;">
-                        <li><a href="../students/index.php" class="dropdown-item">Students</a></li>
-                        <li><a href="../mentors/index.php" class="dropdown-item">Mentors</a></li>
-                        <li><a href="../companies/index.php" class="dropdown-item">Companies</a></li>
-                        </ul>
-                    </li>           
                     <a class="nav-item nav-link active mr-2 text-warning" href=""><i class="fa fa-user-circle">Profile</i></a>
-                    <button type="button" class="btn btn-outline-warning mx-1" onclick=' location.href="" '>Dashboard</button>
                     <button type="button" class="btn btn-outline-warning mx-1" onclick=' location.href="post_internship.php" '> <i class="fas fa-plus"></i> Post Internship</button>
-                    <button type="button" class="btn btn-outline-warning ml-5" onclick=' location.href="../index.php" '>Logout</button>
+                    <button type="button" class="btn btn-outline-warning ml-5" onclick=' location.href="../logout.php" '>Logout</button>
                 </div>
                 </div>
             </div>
         </nav>
       <!-- Nav Ends -->
+    
     </div>
     
 

@@ -1,6 +1,26 @@
 <?php include('includes/students-header.php') ?>
 
 
+<?php
+  include_once('../const/mysqli-connection.php');
+  $companyName = mysqli_real_escape_string($dbConnection,trim($_GET['companyName']));
+  $query = "SELECT * FROM companies WHERE company_name = '$companyName'";
+  $result = mysqli_query($dbConnection, $query);
+  $row = mysqli_fetch_assoc($result);
+  $companyId = $row['id'];
+
+  $userId = $_SESSION['userId'];
+  $queryStudent = "SELECT * FROM students WHERE id = '$userId' ";
+  $studentResult = mysqli_query($dbConnection, $queryStudent);
+  $studentRow = mysqli_fetch_assoc($studentResult);
+  $studentName = $studentRow['first_name']." ".$studentRow['last_name'];
+  $studentMajor = $studentRow['major'];
+  $studentEmail = $studentRow['email'];
+
+
+?>
+
+
 <div class="container w-50 py-4">
 <section class="content">
       <div class="container">
@@ -8,48 +28,41 @@
           <!-- left column -->
           <div class="col-md-12">
             <!-- jquery validation -->
-            <div class="card card-primary">
+            <div class="card card-warning">
               <div class="card-header">
-                <h3 class="card-title">Apply to companyName</h3>
+                <h3 class="card-title">Confirm Applying to <?php echo $companyName?></h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" id="quickForm"  novalidate="novalidate">
+              <form role="form" id="quickForm" action="./process-application.php" method="POST" novalidate="novalidate">
                 <div class="card-body">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">First Name</label>
-                    <input type="email" name="first-name" class="form-control" id="exampleInputEmail1" placeholder="firstname">
+                    <label for="">Your Name</label>
+                    <input readonly value="<?php echo $studentName; ?>" type="text" name="student-name" class="form-control" id="" placeholder="full-name">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Last Name</label>
-                    <input type="email" name="last-name" class="form-control" id="exampleInputEmail1" placeholder="lastname">
+                    <label for="">Company Name</label>
+                    <input readonly value="<?php echo $companyName; ?>" type="text" name="company-name" class="form-control" id="" placeholder="company-name">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="email">
+                    <label for="">Email address</label>
+                    <input readonly value="<?php echo $studentEmail; ?>" type="" name="email" class="form-control" id="" placeholder="email">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Major</label>
-                    <input type="password" name="major" class="form-control" id="exampleInputPassword1" placeholder="Major">
+                    <label for="">Major</label>
+                    <input readonly value="<?php echo $studentMajor; ?>" type="text" name="major" class="form-control" id="" placeholder="Major">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Transcript</label>
-                    <input type="file" name="transcript" class="form-control" id="exampleInputPassword1" placeholder="transcrips">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">CV</label>
-                    <input type="file" name="cv" class="form-control" id="exampleInputPassword1" placeholder="Curriculum vitae">
-                  </div>
-                  <div class="form-group mb-0">
-                    <div class="custom-control custom-checkbox">
-                      <input type="checkbox" name="terms" class="custom-control-input" id="exampleCheck1">
-                      <label class="custom-control-label" for="exampleCheck1">I agree to the <a href="#">terms of service</a>.</label>
-                    </div>
+                    <label for="">Why should you be considered in few sentence!!</label>
+                    <input  value="" type="text" name="description" class="form-control" id="" placeholder="why considering you">
                   </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" name='signup' class="btn btn-primary">Submit</button>
+                <input type="hidden" name="userId" value="<?php echo $userId?>">
+                <input type="hidden" name="companyId" value="<?php echo $companyId?>">
+
+                  <button type="submit" name='apply' class="btn btn-primary">Submit</button>
                   <button type="button" name='cancel' class="btn btn-outline-warning float-right" onclick=' location.href="index.php" '>Cancel</button>
                 </div>
               </form>

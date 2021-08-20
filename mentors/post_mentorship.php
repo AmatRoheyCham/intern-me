@@ -1,4 +1,5 @@
-<?php  include('includes/mentors-header.php') ?>
+<?php  include('includes/mentors-header.php');
+?>
 
 
 <div class="container w-50 py-4">
@@ -14,25 +15,37 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" id="quickForm"  novalidate="novalidate">
+              <form role="form" id="quickForm" method="POST" action="process-post.php"  novalidate="novalidate">
                 <div class="card-body">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Title</label>
-                    <input type="email" name="title" class="form-control" id="exampleInputEmail1" placeholder="firstname">
+                    <input type="text" name="title" class="form-control" id="" placeholder="Post Title">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Description</label>
-                    <textarea name="description" id="" cols="70" rows="10"></textarea>
+                    <label class="row" for="type" class="col-sm-2 col-form-label">Category</label>
+                    <div class="">
+                      <select  class="form-control" name="category" id="">
+                      <?php
+                      include_once('../const/mysqli-connection.php');
+                        $selectCategories = "SELECT * FROM mentorship_category";
+                        $selectResut = mysqli_query($dbConnection,$selectCategories);
+                        while ($row = mysqli_fetch_assoc($selectResut)) {
+                          ?>
+                            <option value="<?php echo $row['category_name']?>"><?php echo $row['category_name']?></option>
+                          <?php
+                        }
+                      ?>
+                      </select>
+                    </div>
                   </div>
-                  <!-- <div class="form-group">
-                    <label for="exampleInputEmail1">DateLine</label>
-                    <input type="Date" name="email" class="form-control" id="exampleInputEmail1" placeholder="email">
-                  </div> -->
-                
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Post</label>
+                    <textarea class="form-control" name="post" id="" cols="70" rows="10"></textarea>
+                  </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" name='signup' class="btn btn-primary">Submit</button>
+                  <button type="submit" name='post-mentorship' class="btn btn-primary">Submit</button>
                   <button type="button" name='cancel' class="btn btn-outline-warning float-right" onclick=' location.href="mentors.php" '>Cancel</button>
                 </div>
               </form>

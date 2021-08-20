@@ -1,6 +1,8 @@
 
 <?php
-include('includes/students-header.php')
+include('includes/students-header.php');
+
+
 ?>
 
   <!-- Header include SEARCH start -->
@@ -8,11 +10,11 @@ include('includes/students-header.php')
        <div class="container-fluid padd-left py-5 bg-dark text-white">
          <h2 class="">Get in touch with your Dream Job</h2>
           <p class="text-warning">Search for you favourite Company</p>
-          <form class="w-75" method="" action="">
+          <form class="w-75" method="GET" action="search_result.php">
           <div class="input-group">
-               <input type="search" class="form-control form-control-lg" name="searchText" placeholder="Type your keywords here">
+               <input type="" class="form-control form-control-lg" name="title" placeholder="Type your keywords here">
                 <div class="input-group-append">
-                   <button type="submit" class="btn btn-lg btn-default base1">
+                   <button type="submit" name="" class="btn btn-lg btn-default">
                         <i class="fa fa-search"></i>
                     </button>
                  </div>
@@ -26,15 +28,15 @@ include('includes/students-header.php')
 <!-- Jobs in High Demand -->
   <div class="container pt-4">
     <h5 class="text-dark">Interns In high Demand Near You</h5>
-    <a href="" class="btn border m-1 btn-outline-secondary text-dark">System Admin</a>
-    <a href="" class="btn border m-1 btn-outline-secondary text-dark">Network Engineer</a>
-    <a href="" class="btn border m-1 btn-outline-secondary text-dark">Chemical Engineer</a>
-    <a href="" class="btn border m-1 btn-outline-secondary text-dark">Data Scientist</a>
-    <a href="" class="btn border m-1 btn-outline-secondary text-dark">Enterprenuer</a>
-    <a href="" class="btn border m-1 btn-outline-secondary text-dark">Agricultural Engineer</a>
-    <a href="" class="btn border m-1 btn-outline-secondary text-dark">Mechanical Engineer</a>
-    <a href="" class="btn border m-1 btn-outline-secondary text-dark">Statistician</a>
-    <a href="" class="btn border m-1 btn-outline-secondary text-dark">Mental Psychologist</a>
+    <a href="search_result.php?title=System Admin" class="btn border m-1 btn-outline-secondary text-dark">System Admin</a>
+    <a href="search_result.php?title=Software Engineer" class="btn border m-1 btn-outline-secondary text-dark">Software Engineer</a>
+    <a href="search_result.php?title=Chemical Engineer" class="btn border m-1 btn-outline-secondary text-dark">Chemical Engineer</a>
+    <a href="search_result.php?title=Data Scientist" class="btn border m-1 btn-outline-secondary text-dark">Data Scientist</a>
+    <a href="search_result.php?title=Enterprenuer" class="btn border m-1 btn-outline-secondary text-dark">Enterprenuer</a>
+    <a href="search_result.php?title=Agricultural Engineer" class="btn border m-1 btn-outline-secondary text-dark">Agricultural Engineer</a>
+    <a href="search_result.php?title=Mechanical Engineer" class="btn border m-1 btn-outline-secondary text-dark">Mechanical Engineer</a>
+    <a href="search_result.php?title=Statistician" class="btn border m-1 btn-outline-secondary text-dark">Statistician</a>
+    <a href="search_result.php?title=Mental Psychologist" class="btn border m-1 btn-outline-secondary text-dark">Mental Psychologist</a>
   </div>
 <!-- Jobs in High demand ends -->
 
@@ -44,98 +46,72 @@ include('includes/students-header.php')
     <div class="col-sm-12 card border shadow col-md-6 col-lg-6">
       <h5 class="text-center text-danger pt-2"><b>Urgent Hirings <strong>!!!</strong></b></h5>
       
+      <?php 
+      require_once("../const/mysqli-connection.php");
+      $query = "SELECT * FROM intern_post WHERE deadline <= NOW() + INTERVAL 14 DAY ORDER BY deadline LIMIT 8";
+      $result = mysqli_query($dbConnection, $query);
+      while ($row = mysqli_fetch_assoc($result)) {
+        $title = $row['title'];
+        $id = $row['id'];
+        $companyName = $row['company_name'];
+        $description =$row['description'];
+        $deadline = $row['deadline'];
+        $requirements =$row['requirements'];
+        ?>
+
         <div class="card shadow">
           <div class="card-body">
             <img src="../images/logo-clock.jpg" width="100px" height="100px" alt="">
-            <h5 class="text-warning"><b>job title</b></h5>
-             <h6><b>Company-name</B></h6>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Tempora error, autem incidunt fugiat corporis voluptas nihil repudiandae saepe? Tempore culpa dolorem ipsum provident
-             nostrum sit amet voluptas illum error quo. <br>
-             <strong>Due Date: 25th november 2021</strong> <br>
-             <a href="job.php" class="btn-sm btn-warning">Read More</a>
-             <a href="apply.php" class="btn-sm btn-secondary">Apply Now</a>
+            <h5 class="text-warning"><b><?php echo $title ?></b></h5>
+             <h6><b><?php echo $companyName ?></B></h6>
+          <p class="card-text"><?php echo $description ?> <br>
+             <strong>Due Date: <?php echo $deadline ?></strong> <br>
+             <a href="read-more.php?id=<?php echo $id; ?>" class="btn-sm btn-warning">Read More</a>
+             <a href="apply.php?companyName=<?php echo $companyName; ?>" class="btn-sm btn-secondary">Apply Now</a>
             </p> 
           </div>
         </div>
 
+        <?php
+      }
 
-        <div class="card shadow">
-          <div class="card-body">
-            <img src="../images/logo-cloud.png" width="100px" height="100px" alt="">
-            <h5 class="text-warning"><b>job title</b></h5>
-             <h6><b>Company-name</B></h6>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Tempora error, autem incidunt fugiat corporis voluptas nihil repudiandae saepe? Tempore culpa dolorem ipsum provident
-             nostrum sit amet voluptas illum error quo. <br>
-             <strong>Due Date: 25th november 2021</strong> <br>
-             <a href="job.php" class="btn-sm btn-warning">Read More</a>
-             <a href="apply.php" class="btn-sm btn-secondary">Apply Now</a>
-            </p> 
-          </div>
-        </div>
+      ?>
 
-        <div class="card shadow">
-          <div class="card-body">
-            <img src="../images/logo-lorem.jpg" width="100px" height="100px" alt="">
-            <h5 class="text-warning"><b>job title</b></h5>
-             <h6><b>Company-name</B></h6>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Tempora error, autem incidunt fugiat corporis voluptas nihil repudiandae saepe? Tempore culpa dolorem ipsum provident
-             nostrum sit amet voluptas illum error quo. <br>
-             <strong>Due Date: 25th november 2021</strong> <br>
-             <a href="job.php" class="btn-sm btn-warning">Read More</a>
-             <a href="apply.php" class="btn-sm btn-secondary">Apply Now</a>
-            </p> 
-          </div>
-        </div>
 
         <!-- Recently Added Scetion -->
  
 </div>
     <div class="col-sm-12 card border shadow col-md-6 col-lg-6">
     <h5 class="text-center text-dark pt-2"><b>Recently Added Jobs</b></h5>
-      <div class="card">
-        <h5 class="card-header">Featured</h5>
-        <div class="card-body">
-          <h5 class="card-title">Job Title</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Tempora error, autem incidunt fugiat corporis voluptas nihil repudiandae saepe? Tempore culpa dolorem ipsum provident
-             nostrum sit amet voluptas illum error quo. <br>
-             <strong>Due Date: 25th november 2021</strong> <br>
-             <a href="job.php" class="btn-sm btn-warning">Read More</a>
-             <a href="apply.php" class="btn-sm btn-secondary">Apply Now</a>
-            </p> 
-        </div>
-      </div>
 
+    <?php 
+      require_once("../const/mysqli-connection.php");
+      $query = "SELECT * FROM intern_post WHERE deadline >= NOW() ORDER BY deadline LIMIT 10";
+      $result = mysqli_query($dbConnection, $query);
+      while ($row = mysqli_fetch_assoc($result)) {
+        $id = $row['id'];
+        $title = $row['title'];
+        $companyName = $row['company_name'];
+        $description =$row['description'];
+        $deadline = $row['deadline'];
+        $requirements =$row['requirements'];
+        ?>
       <div class="card">
         <h5 class="card-header">Featured</h5>
         <div class="card-body">
-          <h4 class="card-title">Job Title</h4>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Tempora error, autem incidunt fugiat corporis voluptas nihil repudiandae saepe? Tempore culpa dolorem ipsum provident
-             nostrum sit amet voluptas illum error quo. <br>
-             <strong>Due Date: 25th november 2021</strong> <br>
-             <a href="job.php" class="btn-sm btn-warning">Read More</a>
-             <a href="apply.php" class="btn-sm btn-secondary">Apply Now</a>
+          <h5 class="card-title"><?php echo $title ?></h5>
+          <p class="card-text"><?php echo $description ?>. <br>
+             <strong>Due Date: <?php echo $deadline ?></strong> <br>
+             <a href="read-more.php?id=<?php echo $id;?>" class="btn-sm btn-warning">Read More</a>
+             <a href="apply.php?companyName=<?php echo $companyName; ?>" class="btn-sm btn-secondary">Apply Now</a>
             </p> 
         </div>
       </div>
+        <?php
+      }
 
-      <div class="card">
-        <h5 class="card-header">Featured</h5>
-        <div class="card-body">
-          <h5 class="card-title">Job Title</h5>
-          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Tempora error, autem incidunt fugiat corporis voluptas nihil repudiandae saepe? Tempore culpa dolorem ipsum provident
-             nostrum sit amet voluptas illum error quo. <br>
-             <strong>Due Date: 25th november 2021</strong> <br>
-             <a href="job.php" class="btn-sm btn-warning">Read More</a>
-             <a href="apply.php" class="btn-sm btn-secondary">Apply Now</a>
-            </p> 
-        </div>
-      </div>
+      ?>
+
     </div>
   </div>
 </section>
@@ -143,7 +119,7 @@ include('includes/students-header.php')
 <!-- Urgent hiring ends -->
 
 <!-- TOp Hiring Modified -->
-<div class="container pt-4">
+<div class="container bg-dark pt-4">
   <h6 class="text-center">OVER 500 REGISTERED JOBS</h6>
   <h2 class="text-center"><b>Top Hiring Companies</b></h2>
   <div class="container text-center pt-4">
@@ -164,59 +140,42 @@ include('includes/students-header.php')
 
 <!-- Mentorship Modified STart -->
 <div class="container pt-5 text-center">
-  <h6>HELPFUL SECTION TO KNOW YOUR CAREER STATUS</h6>
-  <h2><b>Career Development & Guidances</b></h2>
-
+  <h6 class="m-0 font-weight-bold text-primary">HELPFUL SECTION TO KNOW YOUR CAREER STATUS</h6>
+  <h2 class="m-0 font-weight-bold text-dark mb-2"><b>Career Development & Guidances</b></h2>
   <div class="container">
     <div class="row">
-        <div class="col-sm-6 col-lg-4 mb-3">
-            <div class="card mb-3 h-100">
 
-                <div class="card-body">
-                <h5 class="card-title text-bold">TITLE</h5>
-                    <p class="card-text">Strengthen your human network with scalable mentorship.
-                       Achieve breakthrough performance for your people and your organization.</p>
-                    <a href="" class="btn btn-outline btn-sm btn-secondary">click to read more</a>
-                  </div>
-            </div>
+<?php
+  include_once("../const/mysqli-connection.php");
+  $queryMentorship = "SELECT * FROM mentorships INNER JOIN mentors ON mentorships.mentor_id = mentors.id LIMIT 7";
+  $mentorshipResult = mysqli_query($dbConnection,$queryMentorship);
+  while ($row = mysqli_fetch_assoc($mentorshipResult)) {
+    $mentorEmail = $row['email'];
+    $mentorName = $row['first_name']." ".$row['last_name'];
+    $mentorTitle = $row['title'];
+    $mentorshipPost = $row['post'];
+    $mentorDate = $row['post_date'];
+    $mentorCategory = $row['mentorship_category'];
+
+    ?>
+        <div class="card border shadow mb-3">
+          <div class="card-body">
+            <h5 class="card-title"><b><?php echo $mentorName?></b></h5>
+            <p class="card-text"><small class="text-muted"><b>category: <?php echo $mentorCategory?></b></small></p>
+            <p class="card-text"><small class=""><b>Title: <?php echo $title?></b></small></p>
+            <p class="card-text"><?php echo $mentorshipPost?></p>
+            <p class="card-text"><small class="text-muted"><b>Date Posted: <?php echo $mentorDate?></b></small></p>
+            <p class="card-text"><small class=""><b>Reach out on: <?php echo $mentorEmail?></b></small></p>
+          </div>
         </div>
-        <div class="col-sm-6 col-lg-4 mb-3">
-            <div class="card mb-3 h-100">
-                <div class="card-body">
-                <h5 class="card-title text-bold">TITLE</h5>
-                    <p class="card-text">We are on a mission to impact 100 million people with the power of mentorship. We offer comprehensive technology-enabled
-                       solutions to launch and run scalable mentorship programs.</p>
-                    <a href="" class="btn btn-outline btn-sm btn-secondary">click to read more</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-lg-4 mb-3">
-            <div class="card mb-3 h-100">
-                <div class="card-body">
-                <h5 class="card-title text-bold">TITLE</h5>
-                    <p class="card-text"> Our commitment is to help your organization and your people win with mentoring..This content is a little bit longer.</p>
-                    <a href="" class="btn btn-outline btn-sm btn-secondary">click to read more</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-lg-4 mb-3">
-            <div class="card mb-3 h-100">
-                <div class="card-body">
-                <h5 class="card-title text-bold">TITLE</h5>
-                    <p class="card-text">Schedule a no-obligation conversation today. You will be glad you did!</p>
-                    <a href="" class="btn btn-outline btn-sm btn-secondary">click to read more</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-lg-4 mb-3">
-            <div class="card mb-3 h-100">
-                <div class="card-body">
-                <h5 class="card-title text-bold">TITLE</h5>
-                    <p class="card-text">You are making mentorship a strategic priority. We will help you scale it right and win.</p>
-                    <a href="" class="btn btn-outline btn-sm btn-secondary">click to read more</a>
-                </div>
-            </div>
-        </div>
+    <?php
+  }
+  
+
+
+?>
+ 
+       
     </div>
 </div>
 </div>

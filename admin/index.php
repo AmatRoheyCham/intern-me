@@ -1,253 +1,207 @@
 <?php include('includes/admin-header.php')  ?>
 
+<?php
+if (isset($_SESSION['login-success'])) {
+        echo $_SESSION['login-success'];
+        unset($_SESSION['login-success']);
+      }
+      ?>
+
 <div class="container pt-4">
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+</div>
+<div class="row">
+
+    <!-- Registered Students card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Registered Students</div>
+                            <?php
+                            include_once('../const/mysqli-connection.php');
+                                $queryStudents = "SELECT * FROM  students";
+                                $resultStudent = mysqli_query($dbConnection,$queryStudents);
+                                $studentsRow = mysqli_num_rows($resultStudent);
+                            ?>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $studentsRow ?></div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Registered Companies Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Registered Companies</div>
+                            <?php
+                            include_once('../const/mysqli-connection.php');
+                                $queryCompanies = "SELECT * FROM  companies";
+                                $resultCompanies = mysqli_query($dbConnection,$queryCompanies);
+                                $companiesRow = mysqli_num_rows($resultCompanies);
+                            ?>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $companiesRow ?></div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registered Companies Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Registered Mentors</div>
+                            <?php
+                            include_once('../const/mysqli-connection.php');
+                                $queryMentors = "SELECT * FROM  mentors";
+                                $resultMentors = mysqli_query($dbConnection,$queryMentors);
+                                $mentorsRow = mysqli_num_rows($resultMentors);
+                            ?>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $mentorsRow ?></div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pending Requests Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            Total Users</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $studentsRow+$companiesRow+$mentorsRow ?></div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-user fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Table Stats -->
     <div class="row">
-
-                        <!-- Registered Students card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-primary shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Registered Students</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">1,000</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Registered Companies Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                    <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Registered Companies</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">100</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Registered Companies Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                    <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Registered Mentors</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">100</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Success Rate Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Student Success Rat
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Pending Requests</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-user fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <div class="col-lg-6">
+        <div class="card">
+                <div class="card-header border-0">
+                    <h3 class="card-title">Intern~Me Overview</h3>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+                    <p class="text-success text-xl">
+                        <i class="ion ion-ios-briefcase-outline"></i>
+                    </p>
+                    <p class="d-flex flex-column text-right">
+                        <span class="font-weight-bold">
+                        <?php
+                            include_once('../const/mysqli-connection.php');
+                                $queryInternship = "SELECT * FROM  intern_post WHERE deadline <= NOW() + INTERVAL 30 DAY";
+                                $resultInternship = mysqli_query($dbConnection,$queryInternship);
+                                $internshipRow = mysqli_num_rows($resultInternship);
+                            ?>
+                        <i class="ion ion-android-arrow-up text-success"></i> <?php echo $internshipRow ?>
+                        </span>
+                        <span class="text-muted">INTERNSHIPS IN ONE MONTH TIME</span>
+                    </p>
                     </div>
-
-    <!-- New Registered Companies  -->
-    <div class="card pt-4 shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">New Company Applications</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="dataTable_length"><label>Show <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="dataTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label></div></div></div><div class="row"><div class="col-sm-12"><table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
-                                <thead>
-                                        <tr role="row"><th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 78px;">Name</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 117px;">Email</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 56px;">Category</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 68px;">Registered date</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Action</th></tr>
-                                </thead>
-                                    <tfoot>
-                                    </tfoot>
-                                    <tbody>      
-                                        
-                                    <tr class="odd">
-                                            <td class="sorting_1">Airi Satou</td>
-                                            <td>111@mail.com</td>
-                                            <td>Tokyo</td>
-                                            <td>2008/11/28</td>
-                                            <td><a href="" class="btn btn-success">verify</a>
-                                            <a href="" class="btn btn-danger">reject</a></td>
-                                        </tr><tr class="even">
-                                            <td class="sorting_1">Angelica Ramos</td>
-                                            <td>111@mail.com</td>
-                                            <td>London</td>
-                                            <td>2009/10/09</td>
-                                            <td><a href="" class="btn btn-success">verify</a>
-                                            <a href="" class="btn btn-danger">reject</a></td>
-                                        </tr><tr class="odd">
-                                            <td class="sorting_1">Ashton Cox</td>
-                                            <td>111@mail.com</td>
-                                            <td>San Francisco</td>
-                                            <td>2009/01/12</td>
-                                            <td><a href="" class="btn btn-success">verify</a>
-                                            <a href="" class="btn btn-danger">reject</a></td>
-                                        </tr></tbody>
-                                </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="dataTable_previous"><a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="dataTable_next"><a href="#" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
-                            </div>
-                        </div>
+                    <!-- /.d-flex -->
+                    <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+                    <p class="text-warning text-xl">
+                        <i class="ion ion-ios-book-outline"></i>
+                    </p>
+                    <p class="d-flex flex-column text-right">
+                        <span class="font-weight-bold">
+                        <?php
+                            include_once('../const/mysqli-connection.php');
+                                $queryMentorships = "SELECT * FROM  mentorships WHERE post_date BETWEEN NOW() - INTERVAL 15 DAY AND NOW() + INTERVAL 15 DAY ";
+                                $resultMentorship = mysqli_query($dbConnection,$queryMentorships);
+                                $mentorshipRow = mysqli_num_rows($resultMentorship);
+                            ?>
+                        <i class="ion ion-android-arrow-up text-success"></i> <?php echo $mentorshipRow ?>
+                         </span>
+                        <span class="text-muted">MENTORSHIPS THIS MONTH</span>
+                    </p>
                     </div>
-
-    <!-- New Registered Students  -->
-                    <div class="card pt-4 shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">New Student Applications</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="dataTable_length"><label>Show <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="dataTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label></div></div></div><div class="row"><div class="col-sm-12"><table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
-                                <thead>
-                                        <tr role="row"><th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 78px;">Name</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 117px;">Email</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 56px;">Major</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 68px;">Registered date</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Action</th></tr>
-                                </thead>
-                                    <tfoot>
-                                    </tfoot>
-                                    <tbody>      
-                                        
-                                    <tr class="odd">
-                                            <td class="sorting_1">Airi Satou</td>
-                                            <td>111@mail.com</td>
-                                            <td>Tokyo</td>
-                                            <td>2008/11/28</td>
-                                            <td><a href="" class="btn btn-success">verify</a>
-                                            <a href="" class="btn btn-danger">reject</a></td>
-                                        </tr><tr class="even">
-                                            <td class="sorting_1">Angelica Ramos</td>
-                                            <td>111@mail.com</td>
-                                            <td>London</td>
-                                            <td>2009/10/09</td>
-                                            <td><a href="" class="btn btn-success">verify</a>
-                                            <a href="" class="btn btn-danger">reject</a></td>
-                                        </tr><tr class="odd">
-                                            <td class="sorting_1">Ashton Cox</td>
-                                            <td>111@mail.com</td>
-                                            <td>San Francisco</td>
-                                            <td>2009/01/12</td>
-                                            <td><a href="" class="btn btn-success">verify</a>
-                                            <a href="" class="btn btn-danger">reject</a></td>
-                                        </tr></tbody>
-                                </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="dataTable_previous"><a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="dataTable_next"><a href="#" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
-                            </div>
-                        </div>
+                    <!-- /.d-flex -->
+                    <div class="d-flex justify-content-between align-items-center mb-0">
+                    <p class="text-danger text-xl">
+                        <i class="ion ion-ios-people-outline"></i>
+                    </p>
+                    <p class="d-flex flex-column text-right">
+                        <span class="font-weight-bold">
+                        <i class="ion ion-android-arrow-up text-danger"></i> <?php echo $studentsRow+$companiesRow+$mentorsRow ?>
+                        </span>
+                        <span class="text-muted">REGISTRATIONS THIS MONTH</span> 
+                    </p>
                     </div>
+                    <!-- /.d-flex -->
+                </div>
+                </div>
+        </div>
+        <!-- GRAPH STARTS -->
+        <div class="card ml-5">
+              <div class="card-header border-0">
+                <div class="d-flex justify-content-between">
+                  <h3 class="card-title">Users Overview</h3>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="d-flex">
+                  <p class="d-flex flex-column">
+                    <span class="text-bold text-lg"><?php echo $studentsRow+$companiesRow+$mentorsRow ?></span>
+                    <span>Total Registerd Users</span>
+                  </p>
+                
+                </div>
+                <!-- /.d-flex -->
 
-    <!-- New Registered Mentors  -->
-    <div class="card pt-4 shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">New Mentor Applications</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="dataTable_length"><label>Show <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="dataTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label></div></div></div><div class="row"><div class="col-sm-12"><table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
-                                <thead>
-                                        <tr role="row"><th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 78px;">Name</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 117px;">Email</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 68px;">Registered date</th>
-                                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 67px;">Action</th></tr>
-                                </thead>
-                                    <tfoot>
-                                    </tfoot>
-                                    <tbody>      
-                                        
-                                    <tr class="odd">
-                                            <td class="sorting_1">Airi Satou</td>
-                                            <td>111@mail.com</td>
-                                            <td>2008/11/28</td>
-                                            <td><a href="" class="btn btn-success">verify</a>
-                                            <a href="" class="btn btn-danger">reject</a></td>
-                                        </tr><tr class="even">
-                                            <td class="sorting_1">Angelica Ramos</td>
-                                            <td>111@mail.com</td>
-                                            <td>2009/10/09</td>
-                                            <td><a href="" class="btn btn-success">verify</a>
-                                            <a href="" class="btn btn-danger">reject</a></td>
-                                        </tr><tr class="odd">
-                                            <td class="sorting_1">Ashton Cox</td>
-                                            <td>111@mail.com</td>
-                                            <td>2009/01/12</td>
-                                            <td><a href="" class="btn btn-success">verify</a>
-                                            <a href="" class="btn btn-danger">reject</a></td>
-                                        </tr></tbody>
-                                </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="dataTable_previous"><a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="dataTable" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="dataTable_next"><a href="#" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="d-flex flex-row justify-content-end">
+                  <span class="mr-2">
+                  <p class="ml-5 d-flex flex-column text-right">
+                    <span class="text-success">
+                      <i class="fas fa-arrow-up"></i> <?php echo $mentorshipRow+$internshipRow ?>
+                    </span>
+                    <span class="text-muted">Post Over The  Last Month</span>
+                  </p>
+                  </span>
+                </div>
+              </div>
+            </div>
+        <!-- GrAPH ENDS -->
+    </div>
+    <!-- Table Stat ens -->
 
 </div>
 
 <footer class="footer text-center">
  <strong>Copyright © 2021 <a href="">  Intern~Me</a>.</strong> All rights
     reserved.
-  </footer>
+</footer>
 
 
   <script src="../plugins/jquery/jquery.min.js"></script>
@@ -257,3 +211,10 @@
 <script src="../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
+
+ <!-- jQuery CDN - Slim version (=without AJAX) -->
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>

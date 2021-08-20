@@ -1,8 +1,6 @@
 
 <?php 
   include('includes/index-header.php');
-  include('includes/mysqli-connection.php');
-
 ?>
 
 <div class=" rounded-3">
@@ -12,7 +10,7 @@
            a Company looking for Interns, ?
             or Do you want to Mentor Students ?<br>
         <button type="button" class="btn btn-outline-warning" onclick=' location.href="login.php" '>Login</button> or 
-         <button type="button" class="btn btn-outline-warning" onclick=' location.href="signup.php" '>SignUp</button>
+        <button type="button" class="btn btn-outline-warning" onclick=' location.href="signup.php" '>SignUp</button>
             to explore more
           </p>
            </div>
@@ -30,10 +28,14 @@
       <!-- <section> begin ============================-->
       <section>
 
+      <?php
+    
+      ?>
+
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-auto mb-5 mb-md-7">
-              <h1 class="fw-semi-bold text-warning">Our <span class="text-1100">Services</span></h1>
+              <h1 class="fw-semi-bold border-bottom border-warning text-warning">Our <span class="text-1100">Services</span></h1>
             </div>
           </div>
           <div class="row">

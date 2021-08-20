@@ -1,8 +1,8 @@
 <?php include('includes/mentors-header.php')?>
 
-<div class="container pt-3">
-<div class="col-md-9 text-center">
-          <div class="card shadow card-primary card-outline">
+<div class="container pt-4">
+<div class="col-md-9 ml-5 text-center">
+          <div class="card shadow ml-5 card-primary card-outline">
           
             <!-- /.card-header -->
             <div class="card-body p-0">

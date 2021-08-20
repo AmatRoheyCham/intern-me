@@ -1,3 +1,29 @@
+<?php
+    session_start();
+    if (isset($_SESSION['companyName'])){
+        $_SESSION['already-logged-in'] = '
+        <div class="alert container alert-success alert-dismissible fade show">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>logged in SuccessFully!</strong>
+      </div>
+        ';
+    }
+    else if (isset($_SESSION['username'])) {
+        $_SESSION['already-logged-in'] = '
+        <div class="alert container alert-success alert-dismissible fade show">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>logged in SuccessFully!</strong>
+        </div>
+        ';
+    }
+    if (isset($_SESSION['not-logged-in'])) {
+        echo $_SESSION['not-logged-in'];
+        unset($_SESSION['not-logged-in']);
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +50,10 @@
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- SEMANTIC UI CSS -->
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <!-- SEMANTIC UI JS -->
+    
 
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,16 +72,10 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
 				
                 <div class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link text-light dropdown-toggle">Categories</a>
-                        <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow" style="left: 0px; right: inherit;">
-                        <li><a href="students/index.php" class="dropdown-item">Students</a></li>
-                        <li><a href="mentors/index.php" class="dropdown-item">Mentors</a></li>
-                        <li><a href="companies/index.php" class="dropdown-item">Companies</a></li>
-                        </ul>
-                    </li>
-                    <a class="nav-item nav-link active mr-2 text-secondary" href="login.php">Login</a>
-                    <button type="button" class="btn btn-outline-warning" onclick=' location.href="signup.php" '>SignUp</button>
+                    <a class="nav-item nav-link active mr-2 text-white" style="color:rgb(6,6,6);" href="login.php">Login</a>
+                    <button type="button" class="btn btn-outline-warning border-4" onclick=' location.href="signup.php" '>
+                    <a href="signup.php" class="text-warning">Sign up</a>
+                    </button>
                 </div>
                 </div>
             </div>
